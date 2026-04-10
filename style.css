@@ -105,3 +105,18 @@ body {
 .order-btn:hover {
     background-color: #1a6b70;
 }
+
+/* ۷. تنظیمات برای صفحات بزرگتر (تبلت و لپ‌تاپ) */
+@media (min-width: 600px) {
+    .container {
+        display: grid; /* استفاده از سیستم شبکه */
+        grid-template-columns: repeat(2, 1fr); /* نمایش دو محصول در هر ردیف */
+        gap: 30px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr); /* نمایش سه محصول در هر ردیف */
+    }
+}
