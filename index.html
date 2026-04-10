@@ -10,12 +10,12 @@
 
 <body>
 
-    <header class="main-header">
+    <header class="lang-switcher">
         <div class="logo">ZEMA</div>
         <div class="lang-switcher">
-            <button class="lang-btn">FA</button>
-            <button class="lang-btn">EN</button>
-            <button class="lang-btn">DE</button>
+            <button class="lang-btn" onclick="changeLang('fa')">FA</button>
+            <button class="lang-btn" onclick="changeLang('en')">EN</button>
+            <button class="lang-btn" onclick="changeLang('de')">DE</button>
         </div>
     </header>
 
@@ -23,30 +23,30 @@
         <div class="product-card">
             <img src="fotos01.jpg" alt="لباس محلی ۱" class="product-img">
             <div class="product-info">
-                <h3>لباس سنتی مدل آرا</h3>
-                <p>طراحی منحصر به فرد با دوخت دستی</p>
+                <h3 id="p1-title">لباس سنتی مدل آرا</h3>
+                <p id="p1-desc">طراحی منحصر به فرد با دوخت دستی</p>
                 <span class="price">۴۰۰ یورو</span>
-                <button class="order-btn">ثبت سفارش (تلگرام)</button>
+                <button class="order-btn" id="p1-btn">ثبت سفارش (تلگرام)</button>
             </div>
         </div>
 
         <div class="product-card">
             <img src="fotos02.jpg" alt="لباس محلی ۲" class="product-img">
             <div class="product-info">
-                <h3>شال محلی طرح بهار</h3>
-                <p>پارچه نخی اعلا، رنگ ثابت</p>
+                <h3 id="p2-title">شال محلی طرح بهار</h3>
+                <p id="p2-desc">پارچه نخی اعلا، رنگ ثابت</p>
                 <span class="price">۴۵۰ یورو</span>
-                <button class="order-btn">ثبت سفارش (تلگرام)</button>
+                <button class="order-btn" id="p2-btn">ثبت سفارش (تلگرام)</button>
             </div>
         </div>
 
         <div class="product-card">
             <img src="fotos03.jpg" alt="لباس محلی ۳" class="product-img">
             <div class="product-info">
-                <h3>لباس محلی زیبا</h3>
-                <p>پارچه های اصل عربی</p>
+                <h3 id="p3-title">لباس محلی زیبا</h3>
+                <p id="p3-desc">پارچه های اصل عربی</p>
                 <span class="price">۳۲۰ یورو</span>
-                <button class="order-btn">ثبت سفارش (تلگرام)</button>
+                <button class="order-btn" id="p3-btn">ثبت سفارش (تلگرام)</button>
             </div>
         </div>  
     </main>
