@@ -1,186 +1,138 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-    background-color: #fcfaf7;
-    font-family: sans-serif;
-    direction: rtl;
-    color: #4a4a4a;
-    transition: all 0.3s ease;
+/* ۱. تنظیمات پایه */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tahoma', sans-serif;
 }
 
-.main-header {
-    background: #fff;
+body {
+    background-color: #f4f4f4;
+    transition: direction 0.3s ease; /* جلوگیری از لرزش هنگام تغییر زبان */
+}
+
+/* ۲. هدر و منوی زبان */
+header {
+    background: #333;
+    color: white;
+    padding: 1rem;
     display: flex;
     justify-content: space-between;
-    padding: 15px 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: sticky; top: 0; z-index: 100;
-}
-
-.logo { font-size: 1.5rem; font-weight: bold; color: #8b5e3c; }
-
-.lang-btn {
-    padding: 5px 10px; cursor: pointer; border: 1px solid #ddd; background: #fff;
-}
-
-.container {
-    padding: 20px;
-    display: grid;
-    grid-template-columns: 1fr; /* در حالت موبایل: تک ستون */
-    gap: 20px;
-}
-
-/* برای تبلت و کامپیوتر */
-@media (min-width: 768px) {
-    .container { grid-template-columns: repeat(2, 1fr); }
-}
-@media (min-width: 1024px) {
-    .container { grid-template-columns: repeat(3, 1fr); }
-}
-
-.product-card {
-    background: #fff; border-radius: 15px; overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* این بخش رو جایگزین استایل قبلی .product-card کن یا بهش اضافه کن */
-.product-card {
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* حرکت نرم و فنری */
-    cursor: pointer;
-}
-
-.product-card:hover {
-    transform: translateY(-10px); /* کارت ۱۰ پیکسل میاد بالا */
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2); /* سایه عمیق‌تر میشه */
-}
-
-.product-img {
-    transition: transform 0.5s ease;
-}
-
-.product-card:hover .product-img {
-    transform: scale(1.08); /* عکس ۸ درصد بزرگتر میشه */
-}
-
-.product-img { width: 100%; height: 300px; object-fit: cover; }
-
-.product-info { padding: 15px; text-align: center; }
-
-.price { display: block; font-weight: bold; font-size: 1.2rem; margin: 10px 0; color: #2e7d32; }
-
-.order-btn {
-    width: 100%; background: #248b91; color: #fff; border: none;
-    padding: 10px; border-radius: 8px; cursor: pointer;
-}
-
-.main-footer {
-    background-color: #333;
-    color: white;
-    padding: 30px 20px;
-    text-align: center;
-    margin-top: 50px;
-}
-
-.footer-content p {
-    margin-bottom: 15px;
-    font-size: 0.9rem;
-}
-
-.social-links a {
-    color: #ffcc00;
-    text-decoration: none;
-    margin: 0 10px;
-    border: 1px solid #ffcc00;
-    padding: 5px 15px;
-    border-radius: 20px;
-    transition: 0.3s;
-}
-
-.social-links a:hover {
-    background: #ffcc00;
-    color: #333;
-}
-
-/* ابتدا این رو به انتهای فایل استایل اضافه کن */
-.lang-btn {
-    transition: all 0.3s ease;
-    border-radius: 5px;
-    margin: 0 2px;
-}
-
-.lang-btn.active {
-    background-color: #248b91; /* رنگ فیروزه‌ای بوتیکت */
-    color: white;
-    border-color: #1a6b70;
-    transform: scale(1.1); /* دکمه فعال کمی بزرگتر بمونه */
-}
-
-.order-btn {
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.order-btn:hover {
-    background-color: #1a6b70;
-    letter-spacing: 1px; /* متن کمی بازتر میشه */
-    box-shadow: 0 5px 15px rgba(36, 139, 145, 0.4);
-}
-
-.order-btn:active {
-    transform: scale(0.95); /* وقتی کلیک میکنی انگار دکمه فرو میره */
-}
-
-/* تنظیمات همبرگر - در حالت عادی مخفی است */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-}
-
-.menu-toggle span {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    transition: 0.3s;
-}
-
-/* استایل مخصوص موبایل */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: flex; /* در موبایل ظاهر شود */
-    }
-
-    .lang-switcher {
-        display: none; /* در حالت عادی مخفی باشد */
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: white;
-        flex-direction: column;
-        padding: 10px;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-        text-align: center;
-    }
-
-    .lang-switcher.show {
-        display: flex; /* وقتی کلاس show اضافه شد نمایش بده */
-    }
-
-    .lang-btn {
-        margin: 5px 0;
-        width: 100%;
-    }
-}
-
-/* جلوگیری از پرش ناگهانی المان‌ها هنگام تغییر جهت */
-body {
-    transition: direction 0.3s ease-in-out;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .lang-switcher {
-    /* اضافه کردن این خط باعث می‌شود منو در موبایل روان‌تر غیب شود */
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: flex;
+    gap: 10px;
+}
+
+.lang-btn {
+    background: #444;
+    color: white;
+    border: 1px solid #666;
+    padding: 5px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.lang-btn.active {
+    background: #ff9800;
+    border-color: #ff9800;
+}
+
+/* ۳. گرید محصولات */
+.products {
+    padding: 2rem;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ۴. کارت محصول و حل مشکل کشیدگی عکس */
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-img {
+    width: 100%;
+    height: 250px;       /* ارتفاع ثابت */
+    object-fit: cover;   /* جلوگیری از کشیدگی عکس */
+    object-position: center;
+}
+
+.product-info {
+    padding: 15px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.order-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+}
+
+/* ۵. منوی موبایل (همبرگری) */
+.menu-icon {
+    display: none; /* در حالت دسکتاپ مخفی */
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .lang-switcher {
+        display: none; /* مخفی کردن در حالت عادی موبایل */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background: #333;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .lang-switcher.show {
+        display: flex; /* نمایش با زدن دکمه همبرگری */
+    }
+}
+
+/* ۶. فوتر */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #333;
+    color: white;
+    margin-top: 2rem;
 }
