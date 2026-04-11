@@ -234,3 +234,19 @@ footer a:hover {
 footer a:visited {
     color: #ffffff !important;
 }
+
+/* این کد باید در انتهای فایل باشد */
+body footer#my-footer, 
+footer {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 50px !important; /* فاصله رو زیاد کردم که تفاوت رو حس کنی */
+    padding: 30px !important;
+    background-color: #222 !important;
+}
+
+footer a {
+    color: #ffffff !important;
+    margin: 0 10px !important;
+    text-decoration: none !important;
+}
