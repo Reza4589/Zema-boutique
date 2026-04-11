@@ -130,3 +130,47 @@ body {
 .order-btn:active {
     transform: scale(0.95); /* وقتی کلیک میکنی انگار دکمه فرو میره */
 }
+
+/* تنظیمات همبرگر - در حالت عادی مخفی است */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    transition: 0.3s;
+}
+
+/* استایل مخصوص موبایل */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* در موبایل ظاهر شود */
+    }
+
+    .lang-switcher {
+        display: none; /* در حالت عادی مخفی باشد */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 10px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+
+    .lang-switcher.show {
+        display: flex; /* وقتی کلاس show اضافه شد نمایش بده */
+    }
+
+    .lang-btn {
+        margin: 5px 0;
+        width: 100%;
+    }
+}

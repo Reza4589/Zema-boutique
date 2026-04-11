@@ -44,10 +44,15 @@ function changeLang(lang) {
         if(btn.innerText.toLowerCase() === lang) {
             btn.classList.add('active');
         }
-        
+
     });
     document.getElementById('footer-text').innerText = translations[lang].footerText;
 
     // تنظیم جهت صفحه (RTL برای فارسی، LTR برای بقیه)
     document.body.style.direction = (lang === 'fa') ? 'rtl' : 'ltr';
+}
+
+function toggleMenu() {
+    const menu = document.getElementById('lang-menu');
+    menu.classList.toggle('show');
 }

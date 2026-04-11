@@ -10,8 +10,14 @@
 
     <header class="main-header">
         <div class="logo">ZEMA</div>
-        <div class="lang-switcher">
-            <button class="lang-btn" onclick="changeLang('fa')">FA</button>
+
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="lang-switcher" id="lang-menu">
+            <button class="lang-btn active" onclick="changeLang('fa')">FA</button>
             <button class="lang-btn" onclick="changeLang('en')">EN</button>
             <button class="lang-btn" onclick="changeLang('de')">DE</button>
         </div>
