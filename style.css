@@ -12,47 +12,51 @@ body {
     /* جلوگیری از لرزش هنگام تغییر زبان */
 }
 
+/* تنظیمات هدر برای همه دستگاه‌ها */
 header {
-    background: #333 !important;
-    display: flex !important;
-    flex-direction: row !important; /* اجبار به چیدمان افقی */
-    justify-content: space-between !important; /* ایجاد فاصله حداکثری */
-    align-items: center !important;
-    padding: 0 20px !important;
-    height: 60px !important;
+    background: #333;
+    color: white;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between; /* این یعنی لوگو چپ، منو راست */
+    align-items: center;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.logo {
-    margin: 0 !important; /* حذف فاصله‌های احتمالی */
-}
-
+/* منوی همبرگری در حالت عادی (دسکتاپ/لینوکس) باید مخفی باشد */
 .menu-icon {
-    display: block !important;
-    margin: 0 !important;
-    font-size: 30px !important;
+    display: none; 
+    font-size: 30px;
+    cursor: pointer;
 }
 
-/* تنظیمات مخصوص موبایل */
+/* لیست زبان‌ها در دسکتاپ باید دیده شود */
+.lang-switcher {
+    display: flex;
+    gap: 10px;
+}
+
+/* فقط وقتی صفحه کوچکتر از 768 پیکسل شد (موبایل) */
 @media (max-width: 768px) {
     .menu-icon {
-        display: block; /* نمایش در موبایل */
+        display: block; /* اینجا ظاهر می‌شود */
     }
 
     .lang-switcher {
-        display: none; /* در حالت عادی مخفی */
+        display: none; /* در موبایل مخفی می‌شود تا همبرگری بازش کند */
         position: absolute;
         top: 60px;
-        right: 20px; /* از سمت راست باز شود */
-        background: #333;
-        border: 1px solid #444;
-        padding: 10px;
+        right: 20px;
+        background: #444;
+        padding: 15px;
         border-radius: 8px;
         flex-direction: column;
-        gap: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
 
-    /* وقتی کلاس show اضافه شد، نمایش بده */
     .lang-switcher.show {
         display: flex !important;
     }
