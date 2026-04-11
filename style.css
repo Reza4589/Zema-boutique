@@ -16,13 +16,66 @@ body {
 header {
     background: #333;
     color: white;
-    padding: 1rem;
+    padding: 0 20px; /* فاصله از چپ و راست */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* چسباندن محتوا به دو طرف */
     align-items: center;
+    height: 60px;
     position: sticky;
     top: 0;
     z-index: 1000;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    white-space: nowrap; /* جلوگیری از شکستن خط لوگو */
+}
+
+.menu-icon {
+    display: none; /* در دسکتاپ مخفی */
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* تنظیمات مخصوص موبایل */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block; /* نمایش در موبایل */
+    }
+
+    .lang-switcher {
+        display: none; /* در حالت عادی مخفی */
+        position: absolute;
+        top: 60px;
+        right: 20px; /* از سمت راست باز شود */
+        background: #333;
+        border: 1px solid #444;
+        padding: 10px;
+        border-radius: 8px;
+        flex-direction: column;
+        gap: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    }
+
+    /* وقتی کلاس show اضافه شد، نمایش بده */
+    .lang-switcher.show {
+        display: flex !important;
+    }
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    white-space: nowrap;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
 }
 
 .lang-switcher {
@@ -122,13 +175,13 @@ header {
         flex-direction: column;
         position: absolute;
         top: 60px;
-        right: 10px;
+        right: 20px;
         background: #333;
         padding: 10px;
         border-radius: 8px;
-        z-index: 1001;
+        gap: 10px;
         /* اضافه کن تا زیر عکس‌ها نره */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
         /* برای قشنگی */
     }
 
