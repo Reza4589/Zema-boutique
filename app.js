@@ -10,7 +10,7 @@ const translations = {
         p2Title: "Bahar Local Scarf", p2Desc: "Premium cotton with fixed colors", p2Price: "€ 15.00", p2Btn: "Order Now",
         p3Title: "Traditional Vest", p3Desc: "Perfect for matching with various outfits", p3Price: "€ 30.00", p3Btn: "Order Now",
         footerText: "Zema Boutique - Traditional & Modern Clothing"
-    },  
+    },
     de: {
         p1Title: "Kleid Ara", p1Desc: "Einzigartiges Design mit Handnaht", p1Price: "€ 45,00", p1Btn: "Bestellen",
         p2Title: "Schal Bahar", p2Desc: "Hochwertige Baumwolle", p2Price: "€ 15,00", p2Btn: "Bestellen",
@@ -20,6 +20,11 @@ const translations = {
 };
 
 function changeLang(lang) {
+    // اگر کاربر از داخل تلگرام باز کرد، تم رنگی تلگرام رو بگیره
+    const tg = window.Telegram?.WebApp;
+    if (tg) {
+        tg.expand(); // باز شدن تمام صفحه در تلگرام
+    }
     // محصول ۱
     document.getElementById('p1-title').innerText = translations[lang].p1Title;
     document.getElementById('p1-desc').innerText = translations[lang].p1Desc;
@@ -41,7 +46,7 @@ function changeLang(lang) {
     // مدیریت ظاهر دکمه‌ها
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.remove('active');
-        if(btn.innerText.toLowerCase() === lang) {
+        if (btn.innerText.toLowerCase() === lang) {
             btn.classList.add('active');
         }
 
