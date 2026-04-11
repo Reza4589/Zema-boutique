@@ -40,6 +40,8 @@ function changeLang(lang) {
             btn.classList.add('active');
         }
     });
+    // بستن خودکار منوی موبایل بعد از انتخاب زبان
+    document.getElementById('lang-menu').classList.remove('show');
 }
 
 // تابع ارسال سفارش به تلگرام
