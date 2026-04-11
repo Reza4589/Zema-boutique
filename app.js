@@ -61,3 +61,19 @@ function toggleMenu() {
     const menu = document.getElementById('lang-menu');
     menu.classList.toggle('show');
 }
+
+// ابتدای فایل app.js
+const tg = window.Telegram.WebApp;
+
+// به محض باز شدن مینی‌اپ، تمام‌صفحه بشه
+tg.ready();
+tg.expand();
+
+// هماهنگ کردن رنگ هدر سایت با رنگ هدر تلگرام
+document.querySelector('.main-header').style.backgroundColor = tg.themeParams.header_bg_color;
+
+function sendOrder(productName) {
+    const message = `سلام! من قصد سفارش این محصول رو دارم: ${productName}`;
+    const myID = "reza_username"; // آی‌دی خودت بدون @
+    window.open(`https://t.me/${myID}?text=${encodeURIComponent(message)}`, '_blank');
+}
