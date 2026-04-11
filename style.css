@@ -8,7 +8,8 @@
 
 body {
     background-color: #f4f4f4;
-    transition: direction 0.3s ease; /* جلوگیری از لرزش هنگام تغییر زبان */
+    transition: direction 0.3s ease;
+    /* جلوگیری از لرزش هنگام تغییر زبان */
 }
 
 /* ۲. هدر و منوی زبان */
@@ -62,7 +63,7 @@ header {
     background: white;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease;
@@ -74,8 +75,10 @@ header {
 
 .product-img {
     width: 100%;
-    height: 250px;       /* ارتفاع ثابت */
-    object-fit: cover;   /* جلوگیری از کشیدگی عکس */
+    height: 250px;
+    /* ارتفاع ثابت */
+    object-fit: cover;
+    /* جلوگیری از کشیدگی عکس */
     object-position: center;
 }
 
@@ -102,7 +105,8 @@ header {
 
 /* ۵. منوی موبایل (همبرگری) */
 .menu-icon {
-    display: none; /* در حالت دسکتاپ مخفی */
+    display: none;
+    /* در حالت دسکتاپ مخفی */
     font-size: 24px;
     cursor: pointer;
 }
@@ -113,7 +117,8 @@ header {
     }
 
     .lang-switcher {
-        display: none; /* مخفی کردن در حالت عادی موبایل */
+        display: none;
+        /* مخفی کردن در حالت عادی موبایل */
         flex-direction: column;
         position: absolute;
         top: 60px;
@@ -121,10 +126,15 @@ header {
         background: #333;
         padding: 10px;
         border-radius: 8px;
+        z-index: 1001;
+        /* اضافه کن تا زیر عکس‌ها نره */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        /* برای قشنگی */
     }
 
     .lang-switcher.show {
-        display: flex; /* نمایش با زدن دکمه همبرگری */
+        display: flex !important; /* اضافه کردن important برای اطمینان */
+        /* نمایش با زدن دکمه همبرگری */
     }
 }
 
