@@ -74,6 +74,6 @@ document.querySelector('.main-header').style.backgroundColor = tg.themeParams.he
 
 function sendOrder(productName) {
     const message = `سلام! من قصد سفارش این محصول رو دارم: ${productName}`;
-    const myID = "reza_username"; // آی‌دی خودت بدون @
+    const myID = "Nikolei"; // آی‌دی خودت بدون @
     window.open(`https://t.me/${myID}?text=${encodeURIComponent(message)}`, '_blank');
 }
