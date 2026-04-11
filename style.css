@@ -12,31 +12,24 @@ body {
     /* جلوگیری از لرزش هنگام تغییر زبان */
 }
 
-/* ۲. هدر و منوی زبان */
 header {
-    background: #333;
-    color: white;
-    padding: 0 20px; /* فاصله از چپ و راست */
-    display: flex;
-    justify-content: space-between; /* چسباندن محتوا به دو طرف */
-    align-items: center;
-    height: 60px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    background: #333 !important;
+    display: flex !important;
+    flex-direction: row !important; /* اجبار به چیدمان افقی */
+    justify-content: space-between !important; /* ایجاد فاصله حداکثری */
+    align-items: center !important;
+    padding: 0 20px !important;
+    height: 60px !important;
 }
 
 .logo {
-    font-weight: bold;
-    font-size: 1.2rem;
-    white-space: nowrap; /* جلوگیری از شکستن خط لوگو */
+    margin: 0 !important; /* حذف فاصله‌های احتمالی */
 }
 
 .menu-icon {
-    display: none; /* در دسکتاپ مخفی */
-    font-size: 30px;
-    cursor: pointer;
-    user-select: none;
+    display: block !important;
+    margin: 0 !important;
+    font-size: 30px !important;
 }
 
 /* تنظیمات مخصوص موبایل */
