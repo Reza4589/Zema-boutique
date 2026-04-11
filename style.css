@@ -174,3 +174,13 @@ body {
         width: 100%;
     }
 }
+
+/* جلوگیری از پرش ناگهانی المان‌ها هنگام تغییر جهت */
+body {
+    transition: direction 0.3s ease-in-out;
+}
+
+.lang-switcher {
+    /* اضافه کردن این خط باعث می‌شود منو در موبایل روان‌تر غیب شود */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
