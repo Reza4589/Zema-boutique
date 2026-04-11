@@ -41,14 +41,14 @@ let currentLang = 'fa';
 function renderProducts() {
     const container = document.getElementById('products-container');
     if (!container) return;
-    
+
     container.innerHTML = ''; // خالی کردن ظرف برای چیدمان جدید
 
     for (let i = 1; i <= 8; i++) {
         const product = translations[currentLang][`p${i}`];
         // این خط دقیقا با اسم عکس‌های تو (fotos01, fotos02, ...) هماهنگ است
         const photoNumber = i < 10 ? `0${i}` : i;
-        
+
         const card = `
             <div class="product-card">
                 <img src="fotos${photoNumber}.jpg" alt="Product ${i}" class="product-img">
@@ -65,23 +65,24 @@ function renderProducts() {
     }
 }
 
-// ۳. تابع تغییر زبان
 function changeLang(lang) {
     currentLang = lang;
-    
-    // بازسازی کل محصولات با زبان جدید
     renderProducts();
 
-    // ترجمه فوتر
-    const footer = document.getElementById('footer-text');
-    if(footer) footer.innerText = translations[lang].footerText;
+    // جابه‌جایی کلاس active بین دکمه‌ها
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        // اگر متن دکمه با زبانی که انتخاب کردیم یکی بود، فعالش کن
+        if (btn.innerText.toLowerCase() === lang.toLowerCase()) {
+            btn.classList.add('active');
+        }
+    });
 
-    // تغییر جهت صفحه
+    document.getElementById('footer-text').innerText = translations[lang].footerText;
     document.documentElement.dir = (lang === 'fa') ? 'rtl' : 'ltr';
 
-    // بستن منوی موبایل
     const menu = document.getElementById('lang-menu');
-    if(menu) menu.classList.remove('show');
+    if (menu) menu.classList.remove('show');
 }
 
 // ۴. تابع ارسال سفارش به تلگرام
@@ -89,10 +90,10 @@ function sendOrder(productId) {
     const productTitle = document.getElementById(`${productId}-title`).innerText;
     const message = `سلام! قصد سفارش این محصول را دارم: ${productTitle}`;
     const myID = "reza_username"; // آی‌دی تلگرامت را اینجا چک کن
-    
+
     const tg = window.Telegram?.WebApp;
     const url = `https://t.me/${myID}?text=${encodeURIComponent(message)}`;
-    
+
     if (tg?.openTelegramLink) {
         tg.openTelegramLink(url);
     } else {
@@ -103,7 +104,7 @@ function sendOrder(productId) {
 // ۵. تابع منوی همبرگری
 function toggleMenu() {
     const menu = document.getElementById('lang-menu');
-    if(menu) menu.classList.toggle('show');
+    if (menu) menu.classList.toggle('show');
 }
 
 // ۶. اجرای اولیه به محض لود شدن سایت

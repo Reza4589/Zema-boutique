@@ -196,3 +196,16 @@ footer {
     color: white;
     margin-top: 2rem;
 }
+
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block !important; /* اجبار به نمایش */
+        visibility: visible !important;
+        color: white !important;
+    }
+    
+    header {
+        justify-content: space-between !important;
+        flex-direction: row !important;
+    }
+}
