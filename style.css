@@ -43,6 +43,25 @@ body {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+/* این بخش رو جایگزین استایل قبلی .product-card کن یا بهش اضافه کن */
+.product-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* حرکت نرم و فنری */
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-10px); /* کارت ۱۰ پیکسل میاد بالا */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2); /* سایه عمیق‌تر میشه */
+}
+
+.product-img {
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.08); /* عکس ۸ درصد بزرگتر میشه */
+}
+
 .product-img { width: 100%; height: 300px; object-fit: cover; }
 
 .product-info { padding: 15px; text-align: center; }
@@ -80,4 +99,34 @@ body {
 .social-links a:hover {
     background: #ffcc00;
     color: #333;
+}
+
+/* ابتدا این رو به انتهای فایل استایل اضافه کن */
+.lang-btn {
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    margin: 0 2px;
+}
+
+.lang-btn.active {
+    background-color: #248b91; /* رنگ فیروزه‌ای بوتیکت */
+    color: white;
+    border-color: #1a6b70;
+    transform: scale(1.1); /* دکمه فعال کمی بزرگتر بمونه */
+}
+
+.order-btn {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.order-btn:hover {
+    background-color: #1a6b70;
+    letter-spacing: 1px; /* متن کمی بازتر میشه */
+    box-shadow: 0 5px 15px rgba(36, 139, 145, 0.4);
+}
+
+.order-btn:active {
+    transform: scale(0.95); /* وقتی کلیک میکنی انگار دکمه فرو میره */
 }
