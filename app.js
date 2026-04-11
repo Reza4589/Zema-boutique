@@ -1,4 +1,3 @@
-// لغت‌نامه کامل
 const translations = {
     fa: {
         p1Title: "لباس سنتی مدل آرا", p1Desc: "طراحی منحصر به فرد با دوخت دستی", p1Btn: "ثبت سفارش",
@@ -11,9 +10,14 @@ const translations = {
         p2Title: "Bahar Scarf", p2Desc: "Premium cotton fabric", p2Btn: "Order Now",
         p3Title: "Traditional Vest", p3Desc: "Perfect for matching outfits", p3Btn: "Order Now",
         footerText: "Zema Boutique - Traditional & Modern Clothing"
+    },
+    de: {
+        p1Title: "Ara Kleid", p1Desc: "Handgefertigtes traditionelles Design", p1Btn: "Jetzt bestellen",
+        p2Title: "Bahar Schal", p2Desc: "Hochwertiger Baumwollstoff", p2Btn: "Jetzt bestellen",
+        p3Title: "Traditionelle Weste", p3Desc: "Perfekt zum Kombinieren", p3Btn: "Jetzt bestellen",
+        footerText: "Zema Boutique - Traditionelle und moderne Kleidung"
     }
 };
-
 // تابع تغییر زبان
 function changeLang(lang) {
     // ترجمه متن‌های محصولات
