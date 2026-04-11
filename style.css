@@ -1,3 +1,6 @@
+body {
+    background-color: red !important;
+}
 /* ۱. تنظیمات پایه */
 * {
     margin: 0;
@@ -19,7 +22,6 @@ header {
     padding: 0 20px;
     display: flex;
     justify-content: space-between; /* این یعنی لوگو چپ، منو راست */
-    align-items: center;
     height: 60px;
     position: sticky;
     top: 0;
@@ -195,6 +197,7 @@ footer {
     background: #333;
     color: white;
     margin-top: 2rem;
+
 }
 
 @media screen and (max-width: 768px) {
@@ -208,4 +211,29 @@ footer {
         justify-content: space-between !important;
         flex-direction: row !important;
     }
+}
+
+footer {
+    display: flex !important;         /* فعال کردن حالت منعطف */
+    justify-content: center !important; /* چیدن کلمات در وسط عرض صفحه */
+    gap: 80px !important;              /* این همان "آدرس فاصله" است؛ بین تلگرام و اینستاگرام ۴۰ پیکسل فاصله می‌اندازد */
+    padding: 20px 0 !important;
+    background-color: #333 !important;
+}
+
+footer a {
+    color: white !important;           /* سفید کردن رنگ کلمات */
+    text-decoration: none !important;  /* حذف خط زیر کلمات */
+    font-weight: bold !important;
+    transition: color 0.3s ease;       /* نرم شدن تغییر رنگ */
+}
+
+/* رنگ وقتی موش (ماوس) روی آن می‌رود */
+footer a:hover {
+    color: #ff9800 !important; /* تبدیل به نارنجی جذاب هنگام هاور */
+}
+
+/* جلوگیری از بنفش شدن لینک‌های دیده شده */
+footer a:visited {
+    color: #ffffff !important;
 }
