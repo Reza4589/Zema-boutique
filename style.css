@@ -1,252 +1,52 @@
-/* ۱. تنظیمات پایه */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Tahoma', sans-serif;
-}
+/* فایل استایل تمیز شده توسط جمینای برای رضا */
 
 body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    transition: direction 0.3s ease;
-    /* جلوگیری از لرزش هنگام تغییر زبان */
 }
 
-/* تنظیمات هدر برای همه دستگاه‌ها */
 header {
-    background: #333;
-    color: white;
-    padding: 0 20px;
     display: flex;
-    justify-content: space-between; /* این یعنی لوگو چپ، منو راست */
-    height: 60px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-/* منوی همبرگری در حالت عادی (دسکتاپ/لینوکس) باید مخفی باشد */
-.menu-icon {
-    display: none; 
-    font-size: 30px;
-    cursor: pointer;
-}
-
-/* لیست زبان‌ها در دسکتاپ باید دیده شود */
-.lang-switcher {
-    display: flex;
-    gap: 10px;
-}
-
-/* فقط وقتی صفحه کوچکتر از 768 پیکسل شد (موبایل) */
-@media (max-width: 768px) {
-    .menu-icon {
-        display: block; /* اینجا ظاهر می‌شود */
-    }
-
-    .lang-switcher {
-        display: none; /* در موبایل مخفی می‌شود تا همبرگری بازش کند */
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        background: #444;
-        padding: 15px;
-        border-radius: 8px;
-        flex-direction: column;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    }
-
-    .lang-switcher.show {
-        display: flex !important;
-    }
-}
-
-.logo {
-    font-weight: bold;
-    font-size: 1.2rem;
-    white-space: nowrap;
-}
-
-.menu-icon {
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
-    user-select: none;
-}
-
-.lang-switcher {
-    display: flex;
-    gap: 10px;
-}
-
-.lang-btn {
-    background: #444;
-    color: white;
-    border: 1px solid #666;
-    padding: 5px 12px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: 0.3s;
-}
-
-.lang-btn.active {
-    background: #ff9800;
-    border-color: #ff9800;
-}
-
-/* ۳. گرید محصولات */
-.products {
-    padding: 2rem;
-}
-
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* ۴. کارت محصول و حل مشکل کشیدگی عکس */
-.product-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease;
-}
-
-.product-card:hover {
-    transform: translateY(-5px);
-}
-
-.product-img {
-    width: 100%;
-    height: 250px;
-    /* ارتفاع ثابت */
-    object-fit: cover;
-    /* جلوگیری از کشیدگی عکس */
-    object-position: center;
-}
-
-.product-info {
-    padding: 15px;
-    text-align: center;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
-}
-
-.order-btn {
-    background: #28a745;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
     color: white;
-    border: none;
-    padding: 10px;
-    margin-top: 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    font-weight: bold;
 }
 
-/* ۵. منوی موبایل (همبرگری) */
-.menu-icon {
-    display: none;
-    /* در حالت دسکتاپ مخفی */
-    font-size: 24px;
-    cursor: pointer;
-}
+.logo { font-size: 24px; font-weight: bold; }
 
-@media (max-width: 768px) {
-    .menu-icon {
-        display: block;
-    }
-
-    .lang-switcher {
-        display: none;
-        /* مخفی کردن در حالت عادی موبایل */
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        background: #333;
-        padding: 10px;
-        border-radius: 8px;
-        gap: 10px;
-        /* اضافه کن تا زیر عکس‌ها نره */
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-        /* برای قشنگی */
-    }
-
-    .lang-switcher.show {
-        display: flex !important; /* اضافه کردن important برای اطمینان */
-        /* نمایش با زدن دکمه همبرگری */
-    }
-}
-
-/* ۶. فوتر */
-footer {
-    text-align: center;
-    padding: 2rem;
-    background: #333;
-    color: white;
-    margin-top: 2rem;
-
-}
-
-@media screen and (max-width: 768px) {
-    .menu-icon {
-        display: block !important; /* اجبار به نمایش */
-        visibility: visible !important;
-        color: white !important;
-    }
-    
-    header {
-        justify-content: space-between !important;
-        flex-direction: row !important;
-    }
-}
-
-footer {
-    display: flex !important;         /* فعال کردن حالت منعطف */
-    justify-content: center !important; /* چیدن کلمات در وسط عرض صفحه */
-    gap: 80px !important;              /* این همان "آدرس فاصله" است؛ بین تلگرام و اینستاگرام ۴۰ پیکسل فاصله می‌اندازد */
-    padding: 20px 0 !important;
-    background-color: #333 !important;
-}
-
-footer a {
-    color: white !important;           /* سفید کردن رنگ کلمات */
-    text-decoration: none !important;  /* حذف خط زیر کلمات */
-    font-weight: bold !important;
-    transition: color 0.3s ease;       /* نرم شدن تغییر رنگ */
-}
-
-/* رنگ وقتی موش (ماوس) روی آن می‌رود */
-footer a:hover {
-    color: #ff9800 !important; /* تبدیل به نارنجی جذاب هنگام هاور */
-}
-
-/* جلوگیری از بنفش شدن لینک‌های دیده شده */
-footer a:visited {
-    color: #ffffff !important;
-}
-
-/* این کد باید در انتهای فایل باشد */
-body footer#my-footer, 
+/* بخش فوتر که مشکل داشت */
 footer {
     display: flex !important;
-    justify-content: center !important;
-    gap: 50px !important; /* فاصله رو زیاد کردم که تفاوت رو حس کنی */
+    flex-direction: column !important; /* اول ستونی برای چیدن متن و لینک‌ها */
+    align-items: center !important;
+    gap: 15px !important;
     padding: 30px !important;
     background-color: #222 !important;
+    color: white !important;
+    width: 100% !important;
+}
+
+.footer-links {
+    display: flex !important;
+    gap: 40px !important; /* فاصله بین تلگرام و اینستاگرام */
 }
 
 footer a {
-    color: #ffffff !important;
-    margin: 0 10px !important;
+    color: white !important;
     text-decoration: none !important;
+    font-weight: bold !important;
+}
+
+footer a:hover { color: #ff9800 !important; }
+
+/* بخش مخصوص موبایل */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+    }
 }
