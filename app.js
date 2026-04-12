@@ -1,4 +1,4 @@
-// ۱. دیتابیس محصولات و ترجمه‌ها
+// ۱. دیتابیس محصولات و ترجمه‌ها (اصلاح شده)
 const translations = {
     fa: {
         p1: { title: "لباس سنتی آرا", desc: "دوخت دستی", btn: "سفارش" },
@@ -9,7 +9,7 @@ const translations = {
         p6: { title: "سارافون کتان", desc: "مناسب فصل", btn: "سفارش" },
         p7: { title: "روسری ابریشم", desc: "طرح اسلیمی", btn: "سفارش" },
         p8: { title: "مانتو خنک", desc: "مدل تابستانه", btn: "سفارش" },
-        footerText: "بوتیک زِما - ۱۴۰۵"
+        footerText: "ما را در شبکه های اجتماعی دنبال کنید"
     },
     en: {
         p1: { title: "Ara Dress", desc: "Handmade", btn: "Order" },
@@ -20,7 +20,7 @@ const translations = {
         p6: { title: "Cotton Sarafon", desc: "Seasonal", btn: "Order" },
         p7: { title: "Silk Scarf", desc: "Islamic Pattern", btn: "Order" },
         p8: { title: "Summer Manto", desc: "Cool Style", btn: "Order" },
-        footerText: "Zema Boutique - 2026"
+        footerText: "Follow us on social media"
     },
     de: {
         p1: { title: "Ara Kleid", desc: "Handgefertigt", btn: "Bestellen" },
@@ -31,7 +31,7 @@ const translations = {
         p6: { title: "Baumwoll-Sarafon", desc: "Saisonal", btn: "Bestellen" },
         p7: { title: "Seidenschal", desc: "Islamisches Muster", btn: "Bestellen" },
         p8: { title: "Sommermantel", desc: "Cooler Stil", btn: "Bestellen" },
-        footerText: "Zema Boutique - 2026"
+        footerText: "Folgen Sie uns in den sozialen Medien"
     }
 };
 
@@ -83,6 +83,7 @@ function changeLang(lang) {
 
     const menu = document.getElementById('lang-menu');
     if (menu) menu.classList.remove('show');
+
 }
 
 // ۴. تابع ارسال سفارش به تلگرام
